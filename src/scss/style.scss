@@ -2,6 +2,7 @@
   color: orange;
 }
 
+
 .profile {
   position: relative;
   width: 300px;
@@ -12,6 +13,7 @@
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.49);
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.49);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.49);
+  margin-bottom: 10px;
   .photo {
     width: 200px;
     height: 200px;
@@ -28,4 +30,10 @@
     text-transform: uppercase;
     font-weight: bold;
   }
+}
+.avatar {
+  position: relative;
+  width: 300px;
+  text-align: center;
+  margin: auto;
 }

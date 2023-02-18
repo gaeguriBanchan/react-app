@@ -1,41 +1,41 @@
 import React, { useReducer, useState } from "react";
-// import personReducer from "./reducer/person-reducer";
+import personReducer from "./reducer/person-reducer";
 
 export default function AppMentor() {
-  const [person, setPerson] = useState(initialPerson);
-  // const [person, dispatch] = useReducer(personReducer, initialPerson);
+  // const [person, setPerson] = useState(initialPerson);
+  const [person, dispatch] = useReducer(personReducer, initialPerson);
   const handleUpdate = () => {
     const prev = prompt(`누구의 이름을 바꾸고 싶은가요?`);
     const current = prompt(`이름을 무엇으로 바꾸고 싶은가요?`);
-    setPerson((person) => ({
-      ...person,
-      mentors: person.mentors.map((mentor) => {
-        if (mentor.name === prev) {
-          return { ...mentor, name: current };
-        }
-        return mentor;
-      }),
-    }));
-    // dispatch({ type: "updated", prev, current });
+    // setPerson((person) => ({
+    //   ...person,
+    //   mentors: person.mentors.map((mentor) => {
+    //     if (mentor.name === prev) {
+    //       return { ...mentor, name: current };
+    //     }
+    //     return mentor;
+    //   }),
+    // }));
+    dispatch({ type: "updated", prev, current });
   };
   const handleAdd = () => {
     const name = prompt(`누구를 추가할꺼고?`);
     const title = prompt(`타이틀은 뭐고?`);
-    if (name && title) {
-      setPerson((person) => ({
-        ...person,
-        mentors: [...person.mentors, { name, title }],
-      }));
-    }
-    // dispatch({ type: "added", name, title });
+    // if (name && title) {
+    //   setPerson((person) => ({
+    //     ...person,
+    //     mentors: [...person.mentors, { name, title }],
+    //   }));
+    // }
+    dispatch({ type: "added", name, title });
   };
   const handleDelete = () => {
     const name = prompt(`누구를 삭제할꺼고?`);
-    setPerson((person) => ({
-      ...person,
-      mentors: person.mentors.filter((mentor) => mentor.name !== name),
-    }));
-    // dispatch({ type: "deleted", name });
+    // setPerson((person) => ({
+    //   ...person,
+    //   mentors: person.mentors.filter((mentor) => mentor.name !== name),
+    // }));
+    dispatch({ type: "deleted", name });
   };
   return (
     <div>

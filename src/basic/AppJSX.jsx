@@ -1,4 +1,4 @@
-import './scss/style.scss';
+import './App.css';
 
 function AppJSX() {
   const name = 'KJJ';
